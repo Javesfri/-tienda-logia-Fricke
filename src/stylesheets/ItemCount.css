@@ -1,0 +1,64 @@
+.item-count-contenedor{
+    width: 350px;
+    height: 150px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.count-contenedor{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color:#e1e5e7d5 ;
+}
+.visor-cantidad{
+    width: 30%;
+    height: 90%;
+    background-color: white;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 3px 2px 4px;
+}
+
+.icono-circulo{
+    width: 35px;
+    height: 35px;
+    color: #ef6124af ;
+    cursor: pointer;
+    user-select: none;
+}
+.icono-circulo:hover{
+    transform: scale(1.1);
+    color: #EF6024 ;
+}
+
+.boton-contenedor{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#e1e5e7d5
+}
+.boton{
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 3px 2px 4px;
+    border: none;
+    background-color:#f0951fb6 ;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.boton:hover{
+    background-color: #F0941F;
+    transform: translate(0px, -5px);
+    transition: all 0.3s;
+}

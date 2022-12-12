@@ -1,0 +1,15 @@
+.CartWidget{
+    width: 70px;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 5px;
+
+}
+.icono-carrito{
+    font-size: 25px;
+}
+span{
+    font-weight: bold;
+}

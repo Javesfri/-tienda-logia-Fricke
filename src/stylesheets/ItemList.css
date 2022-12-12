@@ -1,0 +1,15 @@
+.item-list{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.item-link{
+    text-decoration: none;
+    color: black;
+}
+.item-link:hover{
+    transform: scale(1.1);
+}

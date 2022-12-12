@@ -1,0 +1,22 @@
+.item-container{
+    width: 250px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 15px;
+    
+}
+.item-image{
+    width: 100%;
+    height: auto;
+}
+
+.item-stock-container{
+    width: 100%;
+    text-align: left;
+    padding: 5px;
+    color: rgb(64, 223, 24);
+}
