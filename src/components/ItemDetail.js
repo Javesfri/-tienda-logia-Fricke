@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import {useState} from "react"
 import '../stylesheets/ItemDetail.css'
 import ItemCount from './ItemCount'
+import { CartContext } from "../context/CartContext";
 
 function ItemDetail({item}){
+    const {aniadirAlCarrito} =useContext(CartContext);
+
+    const onAdd = (cant) =>{
+        aniadirAlCarrito(item,cant);
+    }
     return(
         <div className="item-detail-contenedor">
             <div className="item-name-contenedor">
@@ -10,7 +17,7 @@ function ItemDetail({item}){
             </div>
             <div className="item-image-features-contenedor">
                 <div className="item-image-contenedor">
-                <img className="item-image" src={require(`../images/${item.id ==undefined ? item.id="0":item.id}.png`)} alt={"imagen de pc"}/>
+                <img className="item-image" src={item?.imageId} alt={"imagen de pc"}/>
                 </div>
                 <div className="item-features-contenedor">
                     <div className="item-features">
@@ -20,7 +27,7 @@ function ItemDetail({item}){
                     <p className="item-price">${item?.price}</p>
                     <p className="item-stock">Stock: {item?.stock}</p>
                     <div className="item-count" >
-                        <ItemCount /> 
+                        <ItemCount onAdd={onAdd} stock={item.stock} /> 
                     </div>    
                 </div>
             </div>

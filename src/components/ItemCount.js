@@ -2,14 +2,26 @@ import React, { useState } from "react";
 import '../stylesheets/ItemCount.css'
 import { CiCircleMinus, CiCirclePlus } from "react-icons/ci";
 
-function ItemCount (){
-  const [contador, setContador]= useState(0);
+function ItemCount ({stock, onAdd,itenName}){
+  const [contador, setContador]= useState(1);
   const agregarCantidad = () =>{
-    setContador(contador + 1);
+    if(contador < stock)
+    {
+      setContador(contador + 1);
+    }
+    else{
+      alert("Stock Maximo")
+    }
+    
   }
   const disminuirCantidad = () =>{
-    if(contador >0)
+    if(contador >1)
       setContador(contador -1);
+  }
+
+  const handleOnAdd = () =>{
+    onAdd(contador);
+    setContador(1);
   }
 
   return(
@@ -24,7 +36,7 @@ function ItemCount (){
         onClick={agregarCantidad} />
       </div>
       <div className="boton-contenedor">
-        <button className="boton">Agregar al Carrito</button>
+        <button onClick={handleOnAdd} className="boton">Agregar al Carrito</button>
       </div>
       
     </div>

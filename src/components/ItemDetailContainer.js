@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import '../stylesheets/ItemDetailContainer.css'
 import ItemDetail from './ItemDetail'
-import items from '../items.json'
+import { doc, getDoc, getFirestore } from "firebase/firestore"
 import { useParams } from "react-router-dom";
 
 
@@ -12,23 +12,15 @@ function ItemDetailContainer(){
   const [post, setPost] =useState({})
 
   useEffect( () => {
-    new Promise((resolve) => {
-      setTimeout( () =>{resolve(items);}, 2000)
-      
-    }).then((arrays) =>{
-      let elemento= -1;
-      arrays.items.forEach(element => {
-        if(elemento ===-1 || elemento ===undefined)
-          elemento =element.find( obj => obj.id===id)
-      });
-      setPost(elemento);
-    })
+    const db=getFirestore();
+    const itemRef = doc(db, "items",id);
+    getDoc(itemRef).then(snapshot => {setPost({id: snapshot.id, ...snapshot.data() })})
+
   }, [id]);
-  console.log(id);
 
   return(
     <div className='contenedor-item-detail'>
-      <ItemDetail item={post}/>
+      {post ? <ItemDetail item={post}/> : <p>Cargando...</p>}
     </div>
   );
 }

@@ -7,11 +7,11 @@ function NavBar(){
             <h2 className='brand'>TiendaLogia</h2>
             <ul className='nav-items'>
                 <li className='li'><Link className='link' to={"/"}>Inicio</Link></li>
-                <li className='li'><Link className='link' to={`/category/${0}`}>PCs</Link></li>
-                <li className='li'><Link className='link' to={`/category/${1}`}>Tarjetas Graficas</Link></li>
+                <li className='li'><Link className='link' to={`/category/computadoras`}>PCs</Link></li>
+                <li className='li'><Link className='link' to={`/category/videocards`}>Tarjetas Graficas</Link></li>
                 <li className='li'><Link className='link' to={"/"}>Contacto</Link></li>
             </ul>
-            <CartWidget/>
+            <Link className='link' to={"/cart"}><CartWidget/></Link>
         </div>
     );
 }
